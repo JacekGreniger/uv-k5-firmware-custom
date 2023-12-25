@@ -86,7 +86,7 @@ bool              gSetting_KILLED;
 bool              gSetting_200TX;
 bool              gSetting_500TX;
 bool              gSetting_350EN;
-uint8_t           gSetting_F_LOCK;
+uint8_t           gSetting_F_LOCK = F_LOCK_NONE;
 bool              gSetting_ScrambleEnable;
 
 enum BacklightOnRxTx_t gSetting_backlight_on_tx_rx;
@@ -225,7 +225,7 @@ uint8_t           gFSKWriteIndex;
 
 bool              gUpdateDisplay;
 
-bool              gF_LOCK = false;
+bool              gF_LOCK = true;
 
 uint8_t           gShowChPrefix;
 

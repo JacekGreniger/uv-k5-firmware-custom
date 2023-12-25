@@ -46,7 +46,7 @@
 	#define ARRAY_SIZE(x) (sizeof(x) / sizeof(x[0]))
 #endif
 
-uint8_t gUnlockAllTxConfCnt;
+uint8_t gUnlockAllTxConfCnt = 10;
 
 #ifdef ENABLE_F_CAL_MENU
 	void writeXtalFreqCal(const int32_t value, const bool update_eeprom)
