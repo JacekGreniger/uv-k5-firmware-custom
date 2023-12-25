@@ -243,6 +243,7 @@ int MENU_GetLimits(uint8_t menu_id, int32_t *pMin, int32_t *pMax)
 		#ifdef ENABLE_NOAA
 			case MENU_NOAA_S:
 		#endif
+		case MENU_TXENA:
 		case MENU_350TX:
 		case MENU_200TX:
 		case MENU_500TX:
@@ -728,6 +729,10 @@ void MENU_AcceptSetting(void)
 			gSetting_350TX = gSubMenuSelection;
 			break;
 
+		case MENU_TXENA:
+			gSetting_TXENA = gSubMenuSelection;
+			break;
+
 		case MENU_F_LOCK: {
 			if(gSubMenuSelection == F_LOCK_NONE) { // select 10 times to enable
 				gUnlockAllTxConfCnt++;
@@ -1095,6 +1100,10 @@ void MENU_ShowCurrentSetting(void)
 			#else
 				gSubMenuSelection = RADIO_FindNextChannel(gEeprom.MrChannel[gEeprom.TX_VFO], 1, false, 1);
 			#endif
+			break;
+
+		case MENU_TXENA:
+			gSubMenuSelection = gSetting_TXENA;
 			break;
 
 		case MENU_350TX:

@@ -138,6 +138,7 @@ const t_menu_item MenuList[] =
 	{"BatCal", VOICE_ID_INVALID,                       MENU_BATCAL        }, // battery voltage calibration
 	{"BatTyp", VOICE_ID_INVALID,                       MENU_BATTYP        }, // battery type 1600/2200mAh
 	{"Reset",  VOICE_ID_INITIALISATION,                MENU_RESET         }, // might be better to move this to the hidden menu items ?
+	{"TxEna", VOICE_ID_INVALID,                    MENU_TXENA         }, // was "350TX"
 
 	{"",       VOICE_ID_INVALID,                       0xff               }  // end of list - DO NOT delete or move this this
 };
@@ -632,6 +633,7 @@ void UI_DisplayMenu(void)
 		#ifdef ENABLE_NOAA
 			case MENU_NOAA_S:
 		#endif
+		case MENU_TXENA:
 		case MENU_350TX:
 		case MENU_200TX:
 		case MENU_500TX:
